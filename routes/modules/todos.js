@@ -1,7 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const Todo = require("../../models/todo")
-
+const bodyParser = require("body-parser")
+express().use(bodyParser.urlencoded({ extended: true }))
 // create new todo
 router.get("/new", (req, res) => {
   return res.render("new")
